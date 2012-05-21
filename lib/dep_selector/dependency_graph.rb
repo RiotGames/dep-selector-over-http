@@ -52,6 +52,7 @@ module DepSelector
     # Note: only invoke this method once all Packages and
     # PackageVersions have been added.
     def generate_gecode_wrapper_constraints(packages_to_include_in_solve=nil)
+      raise "#generate_gecode_wrapper_constraints"
       unless @gecode_wrapper
         packages_in_solve =
           if packages_to_include_in_solve
