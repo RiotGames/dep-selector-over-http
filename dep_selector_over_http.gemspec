@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.license = 'Apache v2'
   s.authors = ["Josiah Kiehl"]
   s.email = ["cw@opscode.com", "mark@opscode.com"]
-  s.homepage = %q{http://github.com/RiotGames/dep_selector_over_http}
+  s.homepage = %q{http://github.com/RiotGames/dep-selector-over-http}
   s.require_path = 'lib'
   s.files = Dir.glob("lib/**/*.{rb}") + Dir.glob("ext/**/*.{i,c,cxx,h,cpp,rb}")
 end
