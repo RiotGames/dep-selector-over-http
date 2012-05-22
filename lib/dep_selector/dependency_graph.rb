@@ -18,7 +18,6 @@
 #
 
 require 'dep_selector/package'
-require 'dep_selector/gecode_wrapper'
 
 # DependencyGraphs contain Packages, which in turn contain
 # PackageVersions. Packages are created at access-time through
@@ -52,22 +51,7 @@ module DepSelector
     # Note: only invoke this method once all Packages and
     # PackageVersions have been added.
     def generate_gecode_wrapper_constraints(packages_to_include_in_solve=nil)
-      raise "#generate_gecode_wrapper_constraints"
-      unless @gecode_wrapper
-        packages_in_solve =
-          if packages_to_include_in_solve
-            packages_to_include_in_solve
-          else
-            packages.map{ |name, pkg| pkg }
-          end
-
-        debugFlag = DebugOptionFile && File::exists?(DebugOptionFile)
-        # In addition to all the packages that the user specified,
-        # there is a "ghost" package that contains the solution
-        # constraints. See Selector#solve for more information.
-        @gecode_wrapper = GecodeWrapper.new(packages_in_solve.size + 1, debugFlag)
-        packages_in_solve.each{ |pkg| pkg.generate_gecode_wrapper_constraints }
-      end
+      raise "#generate_gecode_wrapper_constraints references c extensions. don't use." 
     end
 
     def gecode_model_vars

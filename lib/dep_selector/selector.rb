@@ -40,8 +40,8 @@ module DepSelector
 
     def find_solution(solution_constraints, valid_packages = nil)
       # HTTP TODO: Make a request to dep-selector-web with the constraints
-      raise "#find_solution"
+      result = Net::HTTP.post_form(URI('http://localhost:9393/'), {selector: self.to_yaml, solution_constraints: solution_constraints.to_yaml, valid_packages: valid_packages.to_yaml})
+      JSON.parse(result.body)
     end
-
+  end
 end
-
