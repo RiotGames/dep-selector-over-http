@@ -24,7 +24,7 @@ require 'rake/gempackagetask'
 require 'rubygems/specification'
 require 'date'
 
-gemspec = eval(File.read('dep_selector.gemspec'))
+gemspec = eval(File.read('dep_selector_over_http.gemspec'))
 
 Rake::GemPackageTask.new(gemspec).define
 
