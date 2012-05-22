@@ -1,6 +1,6 @@
 = Background
 
-This gem is a drop in replacement for dep-selector to allow people who can't build dep-selector on their OS (eg. Windows).
+This gem is a drop in replacement for dep-selector to allow people who can't build dep-selector on their OS (eg. Windows) to use Selector#find_solution.
 
 It's a crazy work around that rips out the Gecode C extension and replaces Selector#find_solution with a web service call provided by RiotGames/dep-selector-server which is needed for RiotGames/knife_cookbook_dependencies
 
