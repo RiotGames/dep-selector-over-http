@@ -39,7 +39,7 @@ module DepSelector
     end
 
     def find_solution(solution_constraints, valid_packages = nil)
-      result = Net::HTTP.post_form(URI('http://localhost:9393/'), {selector: self.to_yaml, solution_constraints: solution_constraints.to_yaml, valid_packages: valid_packages.to_yaml})
+      result = Net::HTTP.post_form(URI('http://devmerlin:9292/'), {selector: self.to_yaml, solution_constraints: solution_constraints.to_yaml, valid_packages: valid_packages.to_yaml})
       JSON.parse(result.body)
     end
   end
